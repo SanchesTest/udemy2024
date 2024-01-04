@@ -1,0 +1,8 @@
+{
+    "[dockercompose]": {
+        "editor.autoIndent": "full"
+    },
+    "diffEditor.wordWrap": "on",
+    "editor.fontSize": 17,
+    "files.autoSave": "onFocusChange"
+}
