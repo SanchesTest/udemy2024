@@ -64,3 +64,39 @@ function getCoupeNumber(num) {
     }
 }
 console.log(getCoupeNumber(10));
+
+
+// Создайте функцию, которая принимает в себя целое число минут и возвращает время в нужном формате строки
+
+function getTimeFromMinutes(num) {
+    if (isNaN(num) || typeof num !== 'number' || num < 0 || num > 600 || num % 1 !== 0) {
+        return "Ошибка, проверьте данные";
+    } else {
+        let hours = Math.floor(num / 60);
+        let minutes = num % 60;
+
+        let nameHour = (hours === 1 || hours === 21) ? 'час' : (hours > 1 && hours < 5) || (hours > 21 && hours < 25) ? 'часа' : 'часов';
+        let nameMinutes = (minutes === 1) ? 'минута' : (minutes > 1 && minutes < 5) ? 'минуты' : 'минут';
+
+        return `${hours} ${nameHour} ${minutes} ${nameMinutes}`;
+    }
+}
+console.log(getTimeFromMinutes(0));
+
+
+// Напишите функцию, которая принимает в себя 4 числа и возвращает самое большее из них. Если один из аргументов не является числом или их меньше 4 - возвращается 0
+
+function findMaxNumber(num1, num2, num3, num4) {
+    // Проверяем, что все аргументы - числа, и что их количество равно 4
+    if (typeof num1 !== 'number' || typeof num2 !== 'number' || typeof num3 !== 'number' || typeof num4 !== 'number') {
+        return 0; // Если какой-то из аргументов не является числом, возвращаем 0
+    } else {
+        // Используем Math.max для нахождения максимального числа из заданных
+        return Math.max(num1, num2, num3, num4);
+    }
+}
+
+console.log(findMaxNumber(1, 5, 6.6, 11)); 
+
+
+
